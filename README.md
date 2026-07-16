@@ -1,20 +1,49 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# PageAgent Connect
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Based on [alibaba/page-agent](https://github.com/alibaba/page-agent) — the GUI agent that lives in your webpage.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This repo ships the upstream PageAgent monorepo plus a **simplified Connect UI** so you can:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+1. Start with one command
+2. Log in providers / add models in the browser
+3. Copy a one-line script, NPM snippet, or bookmarklet to connect any page
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## One command
+
+```bash
+npm install
+npm start
+```
+
+Open the URL Vite prints (default `http://localhost:5173`).
+
+## Connect UI
+
+In the Connect UI you can:
+
+- **Log in models** — DashScope, OpenAI, OpenRouter, DeepSeek, Ollama, LM Studio, or a custom OpenAI-compatible endpoint
+- **Save sessions** — API keys stay in `localStorage` on your machine
+- **Copy connect snippets**
+    - `npm start` (local UI)
+    - `<script>` tag with your model baked into the CDN URL
+    - NPM `PageAgent` constructor config
+    - Bookmarklet for any site
+- **Try a playground** — launch PageAgent on the Connect page and run a natural-language task
+
+## Upstream PageAgent
+
+Everything under `packages/` except `packages/connect` comes from upstream PageAgent (`v1.12.1`).
+
+Useful upstream commands:
+
+```bash
+npm run start:website   # full docs site
+npm run dev:demo        # library demo
+npm run build           # build packages
+```
+
+Docs: [alibaba.github.io/page-agent](https://alibaba.github.io/page-agent/)
+
+## License
+
+MIT — see [LICENSE](./LICENSE). Upstream attribution and terms for the free testing API are in [docs/terms-and-privacy.md](./docs/terms-and-privacy.md).

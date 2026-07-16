@@ -1,0 +1,23 @@
+{
+    "name": "@page-agent/connect",
+    "private": true,
+    "version": "1.12.1",
+    "type": "module",
+    "description": "Simplified one-command UI to connect PageAgent and log in models",
+    "scripts": {
+        "dev": "vite --host 0.0.0.0 --port 5173",
+        "build": "vite build",
+        "preview": "vite preview --host 0.0.0.0 --port 5173"
+    },
+    "dependencies": {
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.3",
+        "typescript": "^6.0.3",
+        "vite": "^8.1.4"
+    }
+}
