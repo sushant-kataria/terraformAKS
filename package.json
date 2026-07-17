@@ -19,7 +19,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sushant-kataria/terraformAKS.git"
+        "url": "https://github.com/sushant-kataria/pageagent.git"
     },
     "homepage": "https://alibaba.github.io/page-agent/",
     "engines": {
