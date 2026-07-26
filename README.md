@@ -1,20 +1,32 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Terraform AKS
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Provisions an **Azure Kubernetes Service** stack with supporting resources via Terraform modules and Azure Pipelines.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## What gets created
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Resource group
+- Azure Container Registry (ACR)
+- Virtual network + subnets
+- AKS cluster (system + user node pools)
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Modules are sourced from Bitbucket (`azure-aks-modules`). Variables live in `variables.tf` / `terraform.tfvars`; remote state settings in `backend.conf`.
+
+## Usage
+
+```bash
+terraform init -backend-config=backend.conf
+terraform plan
+terraform apply
+```
+
+CI/CD: see `azure-pipelines.yml` and `.pipelines/`.
+
+## Requirements
+
+- Azure subscription + service principal for pipelines
+- Access to the Bitbucket module source referenced in `main.tf`
+- Terraform CLI compatible with `versions.tf`
+
+## Note
+
+Draft PR #1 that replaces this repo with an unrelated PageAgent UI should **not** be merged into this infrastructure project.
